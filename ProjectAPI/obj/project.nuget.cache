@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "JW6CYIMjjhR/MdVw0w10rBFRjY3QSfSwELsfPx2x6PwnK4BBH8c0ZijpMtpHvBzH2/ZRMkAVETxZ3q8aY4YR/w==",
+  "success": true,
+  "projectFilePath": "A:\\MyProject\\Project\\ProjectAPI\\ProjectAPI\\ProjectAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rajka\\.nuget\\packages\\swashbuckle.aspnetcore\\9.0.3\\swashbuckle.aspnetcore.9.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
