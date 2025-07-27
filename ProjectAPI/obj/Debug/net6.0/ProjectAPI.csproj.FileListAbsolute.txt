@@ -1,0 +1,5 @@
+A:\MyProject\Project\ProjectAPI\ProjectAPI\obj\Debug\net6.0\ProjectAPI.GeneratedMSBuildEditorConfig.editorconfig
+A:\MyProject\Project\ProjectAPI\ProjectAPI\obj\Debug\net6.0\ProjectAPI.AssemblyInfoInputs.cache
+A:\MyProject\Project\ProjectAPI\ProjectAPI\obj\Debug\net6.0\ProjectAPI.AssemblyInfo.cs
+A:\MyProject\Project\ProjectAPI\ProjectAPI\obj\Debug\net6.0\ProjectAPI.csproj.CoreCompileInputs.cache
+A:\MyProject\Project\ProjectAPI\ProjectAPI\obj\Debug\net6.0\ProjectAPI.MvcApplicationPartsAssemblyInfo.cache
