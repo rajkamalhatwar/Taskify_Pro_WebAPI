@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using ProjectAPI.Entity;
+﻿using ProjectAPI.Entity;
 using ProjectAPI.Repository;
 using ProjectAPI.ServiceInterfaces;
 using ProjectAPI.ViewModel;
