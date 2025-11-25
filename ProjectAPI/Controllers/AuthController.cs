@@ -32,10 +32,10 @@ namespace ProjectAPI.Controllers
 
                 // Set token as HttpOnly Cookie
                 Response.Cookies.Append("jwt", token, new CookieOptions
-                {
+                { 
                     HttpOnly = true,   // JS can't read it
-                    Secure = true,     // only HTTPS
-                    SameSite = SameSiteMode.Strict, // prevents CSRF
+                    Secure = false,     // only HTTPS    on production it will be true
+                    SameSite = SameSiteMode.Strict, // prevents CSRF for production 
                     Expires = DateTime.UtcNow.AddHours(1) // match token expiry
                 });
                 return Ok(response);
@@ -45,6 +45,22 @@ namespace ProjectAPI.Controllers
                 return Unauthorized(new { Success = false, Message = response.Message });
             }
         }
+
+        [HttpPost("logout")]
+        public IActionResult Logout()
+        {
+            // Remove cookie by overwriting with expired one
+            Response.Cookies.Append("jwt", "", new CookieOptions
+            {
+                Expires = DateTime.UtcNow.AddDays(-1), // expire immediately
+                HttpOnly = true,
+                Secure = false, // true in production
+                SameSite = SameSiteMode.Strict
+            });
+
+            return Ok(new { Success = true, Message = "Logged out successfully." });
+        }
+
     }
 }
     
