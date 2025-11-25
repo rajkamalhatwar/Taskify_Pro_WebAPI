@@ -30,20 +30,23 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ITask, TaskRepository>();
 builder.Services.AddScoped<ITaskService, TaskService>();
 
-// ✅ 1. Add CORS
+// ✅ 1. Add CORS 
+
+// ✅ CORS configuration for local development with cookies
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowFrontend",
-        policy =>
-        {
-            policy.WithOrigins("http://127.0.0.1:5500", // VS Code Live Server
-                               "http://localhost:7228",  // Another local origin
-                               "http://localhost")       // General localhost
-                  .AllowAnyHeader()
-                  .AllowAnyMethod()
-                  .AllowCredentials();
-        });
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins(
+                "http://127.0.0.1:5500"  // VS Code Live Server
+            )
+            .AllowAnyHeader()     // allow all headers
+            .AllowAnyMethod();    // allow GET, POST, etc.
+           // .AllowCredentials();  // allow cookies to be sent
+    });
 });
+
+
 
 // 1. Add Authentication
 builder.Services.AddAuthentication(options =>
@@ -53,7 +56,7 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(options =>
 {
-    options.RequireHttpsMetadata = true;
+    options.RequireHttpsMetadata = false; // Set to true in production
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
@@ -66,18 +69,18 @@ builder.Services.AddAuthentication(options =>
             Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     };
 
-    // ✅ This allows reading token from cookie instead of header
-    options.Events = new JwtBearerEvents
-    {
-        OnMessageReceived = context =>
-        {
-            if (context.Request.Cookies.ContainsKey("jwt"))
-            {
-                context.Token = context.Request.Cookies["jwt"];
-            }
-            return Task.CompletedTask;
-        }
-    };
+    //// ✅ This allows reading token from cookie instead of header
+    //options.Events = new JwtBearerEvents
+    //{
+    //    OnMessageReceived = context =>
+    //    {
+    //        if (context.Request.Cookies.ContainsKey("jwt"))
+    //        {
+    //            context.Token = context.Request.Cookies["jwt"];
+    //        }
+    //        return Task.CompletedTask;
+    //    }
+    //};
 });
 
 // 2. Add Authorization
@@ -94,7 +97,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection(); // comment out for production
 
 // ✅ 4. Enable CORS before Auth
 app.UseCors("AllowFrontend");
