@@ -145,8 +145,8 @@ TaskifyPro
 **Rajkamal Hatwar**
 Junior Software Developer
 📧 Email: [rajkamalhatwar@gmail.com](mailto:rajkamalhatwar@gmail.com)
-🔗 GitHub: [https://github.com/your-username](https://github.com/your-username)
-🔗 LinkedIn: [https://linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
+🔗 GitHub: https://github.com/rajkamalhatwar
+🔗 LinkedIn: https://www.linkedin.com/in/rajkamal-hatwar-2b014b1b5/
 
 ---
  
