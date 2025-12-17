@@ -112,7 +112,7 @@ TaskifyPro
 ## 🔑 Configuration
 
 * Update **ConnectionStrings** in `appsettings.json`
-* Configure JWT settings (if used)
+* Configure JWT settings
 * Set environment variables if required
 
 --- 
@@ -134,7 +134,7 @@ TaskifyPro
 
 ## 🔗 Related Repositories
 
-* **Frontend Repository:** [Taskify Pro – Frontend](https://github.com/rajkamalhatwar/Taskify_Pro_Frontend)
+* **Frontend Repository:** https://github.com/rajkamalhatwar/Taskify_Pro_Frontend
 
 > This repository contains the **backend REST API only**. The frontend application (UI) is developed and maintained separately to follow a clean separation of concerns.
 
