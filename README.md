@@ -143,7 +143,7 @@ TaskifyPro
 ## 👨‍💻 Author
 
 **Rajkamal Hatwar**
-Junior Software Developer
+Software Developer
 📧 Email: [rajkamalhatwar@gmail.com](mailto:rajkamalhatwar@gmail.com)
 🔗 GitHub: https://github.com/rajkamalhatwar
 🔗 LinkedIn: https://www.linkedin.com/in/rajkamal-hatwar-2b014b1b5/
